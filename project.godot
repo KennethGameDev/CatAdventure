@@ -53,3 +53,8 @@ jump={
 2d_physics/layer_3="Painful"
 2d_physics/layer_4="Items"
 2d_physics/layer_5="Climbable"
+
+[physics]
+
+common/physics_jitter_fix=0.0
+common/physics_interpolation=true
