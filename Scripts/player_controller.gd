@@ -1,30 +1,29 @@
 extends CharacterBody2D
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var camera_2d = $Camera2D
+
 # Exporting for easy testing. Convert back to consts once the movement is locked
 @export var speed: float = 300.0
 @export var jump_velocity: float = -600.0
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var camera_2d = $Camera2D
+@export var look_ahead_distance_px: int = 0
+@export var camera_ease_curve: Curve
+var health: float = 100.0
+var direction: float = 0.0
 var jumping: bool = false
+var camera_offset_amount: float = 0.0
+var camera_move_done: bool = false
 
 
 func _physics_process(delta):
 	apply_gravity(delta)
 	
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_velocity
-		jumping = true
-		animated_sprite_2d.play("jump")
-	
-	process_movement_input()
-	
-	# NOT FUNCTIONAL YET
-	attempt_climb(delta)
-	# NOT FUNCTIONAL YET
-	attempt_mantle(delta)
+	process_input()
 	
 	move_and_slide()
+	
+	look_ahead(delta)
+
 
 func apply_gravity(delta) -> void:
 	# Add the gravity.
@@ -35,16 +34,23 @@ func apply_gravity(delta) -> void:
 			jumping = false
 			animated_sprite_2d.play("idle")
 
-func process_movement_input() -> void:
+
+func process_input() -> void:
+	# Handle jump.
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = jump_velocity
+		jumping = true
+		animated_sprite_2d.play("jump")
+	
 	# Get the input direction and handle the movement/deceleration.
-	var direction = Input.get_axis("move_left", "move_right")
+	direction = Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * speed
 		# Flip the sprite to face the direction of movement
 		if direction > 0:
-			animated_sprite_2d.flip_h = false
+			animated_sprite_2d.set_flip_h(false)
 		else:
-			animated_sprite_2d.flip_h = true
+			animated_sprite_2d.set_flip_h(true)
 		# Only play the move animation when not jumping
 		# BUG: the walking animation will continue when walking off a ledge because that is not a "jump"
 		# Solution: the flag should be changed from "jumping" to "airborne" and be set to true whenever
@@ -57,23 +63,17 @@ func process_movement_input() -> void:
 		if not jumping:
 			animated_sprite_2d.play("idle")
 
-func attempt_mantle(delta) -> void:
-	if is_on_wall():
-		# If the cat's front paws can reach a ledge, it can pull itself up.
-		# So, if the cat's sprite is a certain amount higher than the ledge when it collides with a wall
-		# it will be pushed up and onto the ledge, simulating a mantle.
-		# We will need:
-			# The position at the top of the cat's sprite.
-			# The positions of the tiles the cat is colliding with.
-			# The position of the "ledge" (top corner of the platform).
-		pass
-
-func attempt_climb(delta) -> void:
-	if is_on_wall():
-		# Similar to mantling, but we don't care about the cat's height.
-		# If the cat is touching a climbable wall it sticks to that wall and slowly climbs
-		pass
-
-# Testing for the wall detection. Doesn't seem helpful yet...
-func _on_area_2d_body_entered(body):
-	print(body.get_collision_layer())
+var curve_sample_pos: float = 0.0
+func look_ahead(delta) -> void:
+	if not camera_move_done:
+		if curve_sample_pos < 1:
+			curve_sample_pos += delta
+			if curve_sample_pos > 1:
+				curve_sample_pos = 1
+				camera_move_done = true
+			if direction > 0:
+				camera_offset_amount += camera_ease_curve.sample(curve_sample_pos)
+			elif direction < 0:
+				camera_offset_amount -= camera_ease_curve.sample(curve_sample_pos)
+		else:
+			curve_sample_pos = 0
