@@ -63,6 +63,7 @@ func process_input() -> void:
 		if not jumping:
 			animated_sprite_2d.play("idle")
 
+
 var curve_sample_pos: float = 0.0
 func look_ahead(delta) -> void:
 	if not camera_move_done:
@@ -77,3 +78,13 @@ func look_ahead(delta) -> void:
 				camera_offset_amount -= camera_ease_curve.sample(curve_sample_pos)
 		else:
 			curve_sample_pos = 0
+
+
+func add_health(health_increase: float) -> void:
+	prints("Health before:", health)
+	health += health_increase
+	if health > 100:
+		health = 100
+	elif health < 0:
+		health = 0
+	prints("Health after:", health)
