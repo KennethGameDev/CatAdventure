@@ -1,96 +1,50 @@
-[gd_scene load_steps=7 format=4 uid="uid://bp4meg1diywr3"]
+[gd_scene load_steps=8 format=4 uid="uid://bp4meg1diywr3"]
 
 [ext_resource type="PackedScene" uid="uid://dwkinc7jnkgt0" path="res://Scenes/cat.tscn" id="1_e6tpv"]
+[ext_resource type="Texture2D" uid="uid://cv85jwwfc2wid" path="res://Assets/background/Background layers/Layer_0011_0.png" id="1_hnd26"]
 [ext_resource type="TileSet" uid="uid://c0vfqr0ub8fq3" path="res://Assets/Tilesets/platform_tiles.tres" id="2_7snvs"]
-[ext_resource type="Curve" uid="uid://scbebvvvb0sk" path="res://Assets/Other/player_camera_ease.tres" id="2_k8yrj"]
-[ext_resource type="PackedScene" uid="uid://hwmwdbi4dbfq" path="res://Scenes/good_food.tscn" id="3_uflgu"]
-[ext_resource type="PackedScene" uid="uid://dis2umgovnxej" path="res://Scenes/toxic_food.tscn" id="5_hnd26"]
-[ext_resource type="PackedScene" uid="uid://cubgwlysbnbef" path="res://Scenes/neutral_food.tscn" id="6_k5pft"]
+
+[ext_resource type="Texture2D" uid="uid://qraicmjkp7tg" path="res://Assets/background/Background layers/Layer_0008_3.png" id="2_k5pft"]
+[ext_resource type="Texture2D" uid="uid://c5qwrkimcfuvp" path="res://Assets/background/Background layers/Layer_0007_Lights.png" id="3_lmly4"]
+[ext_resource type="Texture2D" uid="uid://d3pn3uto4rib3" path="res://Assets/background/Background layers/Layer_0006_4.png" id="4_pkakm"]
+[ext_resource type="Texture2D" uid="uid://dwc1qujsuanoj" path="res://Assets/background/Background layers/Layer_0002_7.png" id="6_k5pft"]
 
 [node name="Zone1" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_e6tpv")]
-position = Vector2(337, 385)
-camera_ease_curve = ExtResource("2_k8yrj")
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Layer00110" type="Sprite2D" parent="."]
+position = Vector2(581.08, 323.982)
+rotation = 3.14159
+scale = Vector2(1.25366, 0.819297)
+texture = ExtResource("1_hnd26")
+
+[node name="Layer00083" type="Sprite2D" parent="."]
+position = Vector2(575.25, -116.5)
+scale = Vector2(1.24084, 1.89533)
+texture = ExtResource("2_k5pft")
+
+[node name="Layer0007Lights" type="Sprite2D" parent="."]
+position = Vector2(666.5, -185.5)
+scale = Vector2(1.42996, 2.98991)
+texture = ExtResource("3_lmly4")
+
+[node name="Layer00064" type="Sprite2D" parent="."]
+position = Vector2(583.5, -119)
+scale = Vector2(1.26185, 1.8966)
+texture = ExtResource("4_pkakm")
 
 [node name="PlatformTiles" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAABAAAQABAAAAAAABABAAAQABAAAAAAACABAAAQABAAAAAAADABAAAQABAAAAAAAEABAAAQABAAAAAAAFABAAAQABAAAAAAAGABAAAQABAAAAAAAHABAAAQABAAAAAAAIABAAAQABAAAAAAAJABAAAQABAAAAAAAKABAAAQABAAAAAAALABAAAQABAAAAAAAAABEAAQABAAAAAAAAABIAAQABAAAAAAAAABMAAQABAAAAAAAAABQAAQABAAAAAAABABEAAQABAAAAAAABABIAAQABAAAAAAABABMAAQABAAAAAAABABQAAQABAAAAAAACABEAAQABAAAAAAACABIAAQABAAAAAAACABMAAQABAAAAAAACABQAAQABAAAAAAADABEAAQABAAAAAAADABIAAQABAAAAAAADABMAAQABAAAAAAADABQAAQABAAAAAAAEABEAAQABAAAAAAAEABIAAQABAAAAAAAEABMAAQABAAAAAAAEABQAAQABAAAAAAAFABEAAQABAAAAAAAFABIAAQABAAAAAAAFABMAAQABAAAAAAAFABQAAQABAAAAAAAGABEAAQABAAAAAAAGABIAAQABAAAAAAAGABMAAQABAAAAAAAGABQAAQABAAAAAAAHABEAAQABAAAAAAAHABIAAQABAAAAAAAHABMAAQABAAAAAAAHABQAAQABAAAAAAAIABEAAQABAAAAAAAIABIAAQABAAAAAAAIABMAAQABAAAAAAAIABQAAQABAAAAAAAJABEAAQABAAAAAAAJABIAAQABAAAAAAAJABMAAQABAAAAAAAJABQAAQABAAAAAAAKABEAAQABAAAAAAAKABIAAQABAAAAAAAKABMAAQABAAAAAAAKABQAAQABAAAAAAALABEAAQABAAAAAAALABIAAQABAAAAAAALABMAAQABAAAAAAALABQAAQABAAAAAAAMABAAAQABAAAAAAAMABEAAQABAAAAAAAMABIAAQABAAAAAAAMABMAAQABAAAAAAAMABQAAQABAAAAAAANABAAAQABAAAAAAANABEAAQABAAAAAAANABIAAQABAAAAAAANABMAAQABAAAAAAANABQAAQABAAAAAAAOABAAAQABAAAAAAAOABEAAQABAAAAAAAOABIAAQABAAAAAAAOABMAAQABAAAAAAAOABQAAQABAAAAAAAPABAAAQABAAAAAAAPABEAAQABAAAAAAAPABIAAQABAAAAAAAPABMAAQABAAAAAAAPABQAAQABAAAAAAAQABAAAQABAAAAAAAQABEAAQABAAAAAAAQABIAAQABAAAAAAAQABMAAQABAAAAAAAQABQAAQABAAAAAAARABAAAQABAAAAAAARABEAAQABAAAAAAARABIAAQABAAAAAAARABMAAQABAAAAAAARABQAAQABAAAAAAASABAAAQABAAAAAAASABEAAQABAAAAAAASABIAAQABAAAAAAASABMAAQABAAAAAAASABQAAQABAAAAAAATABAAAQABAAAAAAATABEAAQABAAAAAAATABIAAQABAAAAAAATABMAAQABAAAAAAATABQAAQABAAAAAAAUABAAAQABAAAAAAAUABEAAQABAAAAAAAUABIAAQABAAAAAAAUABMAAQABAAAAAAAUABQAAQABAAAAAAAVABAAAQABAAAAAAAVABEAAQABAAAAAAAVABIAAQABAAAAAAAVABMAAQABAAAAAAAVABQAAQABAAAAAAAWABAAAQABAAAAAAAWABEAAQABAAAAAAAWABIAAQABAAAAAAAWABMAAQABAAAAAAAWABQAAQABAAAAAAAXABAAAQABAAAAAAAXABEAAQABAAAAAAAXABIAAQABAAAAAAAXABMAAQABAAAAAAAXABQAAQABAAAAAAAYABAAAQABAAAAAAAYABEAAQABAAAAAAAYABIAAQABAAAAAAAYABMAAQABAAAAAAAYABQAAQABAAAAAAAZABAAAQABAAAAAAAZABEAAQABAAAAAAAZABIAAQABAAAAAAAZABMAAQABAAAAAAAZABQAAQABAAAAAAAaABAAAQABAAAAAAAaABEAAQABAAAAAAAaABIAAQABAAAAAAAaABMAAQABAAAAAAAaABQAAQABAAAAAAAbABAAAQABAAAAAAAbABEAAQABAAAAAAAbABIAAQABAAAAAAAbABMAAQABAAAAAAAbABQAAQABAAAAAAAcABAAAQABAAAAAAAcABEAAQABAAAAAAAcABIAAQABAAAAAAAcABMAAQABAAAAAAAcABQAAQABAAAAAAAdABAAAQABAAAAAAAdABEAAQABAAAAAAAdABIAAQABAAAAAAAdABMAAQABAAAAAAAdABQAAQABAAAAAAAeABAAAQABAAAAAAAeABEAAQABAAAAAAAeABIAAQABAAAAAAAeABMAAQABAAAAAAAeABQAAQABAAAAAAAfABAAAQABAAAAAAAfABEAAQABAAAAAAAfABIAAQABAAAAAAAfABMAAQABAAAAAAAfABQAAQABAAAAAAAgABAAAQABAAAAAAAgABEAAQABAAAAAAAgABIAAQABAAAAAAAgABMAAQABAAAAAAAgABQAAQABAAAAAAAhABAAAQABAAAAAAAhABEAAQABAAAAAAAhABIAAQABAAAAAAAhABMAAQABAAAAAAAhABQAAQABAAAAAAAiABAAAQABAAAAAAAiABEAAQABAAAAAAAiABIAAQABAAAAAAAiABMAAQABAAAAAAAiABQAAQABAAAAAAAjABAAAQABAAAAAAAjABEAAQABAAAAAAAjABIAAQABAAAAAAAjABMAAQABAAAAAAAjABQAAQABAAAAAAAkABAAAQABAAAAAAAkABEAAQABAAAAAAAkABIAAQABAAAAAAAkABMAAQABAAAAAAAkABQAAQABAAAAAAD//xAAAQABAAAAAAD//xEAAQABAAAAAAD//xIAAQABAAAAAAD//xMAAQABAAAAAAD//xQAAQABAAAAAAAaAAcAAQABAAAAAAAaAAgAAQABAAAAAAAbAAcAAQABAAAAAAAbAAgAAQABAAAAAAAcAAcAAQABAAAAAAAcAAgAAQABAAAAAAAdAAcAAQABAAAAAAAdAAgAAQABAAAAAAAeAAcAAQABAAAAAAAeAAgAAQABAAAAAAAfAAcAAQABAAAAAAAfAAgAAQABAAAAAAAgAAcAAQABAAAAAAAgAAgAAQABAAAAAAAhAAcAAQABAAAAAAAhAAgAAQABAAAAAAAiAAcAAQABAAAAAAAiAAgAAQABAAAAAAAjAAcAAQABAAAAAAAjAAgAAQABAAAAAAAkAAcAAQABAAAAAAAkAAgAAQABAAAAAAAaAAkAAQABAAAAAAAbAAkAAQABAAAAAAAcAAkAAQABAAAAAAAdAAkAAQABAAAAAAAiAAkAAQABAAAAAAAjAAkAAQABAAAAAAAkAAkAAQABAAAAAAAhAAkAAQABAAAAAAAgAAkAAQABAAAAAAAfAAkAAQABAAAAAAAeAAkAAQABAAAAAAA=")
 tile_set = ExtResource("2_7snvs")
 
-[node name="Good Food Nodes" type="Node2D" parent="."]
 
-[node name="GoodFood" parent="Good Food Nodes" instance=ExtResource("3_uflgu")]
-position = Vector2(168, 494)
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_e6tpv")]
+position = Vector2(337, 385)
 
-[node name="GoodFood2" parent="Good Food Nodes" instance=ExtResource("3_uflgu")]
-position = Vector2(206, 494)
-
-[node name="GoodFood3" parent="Good Food Nodes" instance=ExtResource("3_uflgu")]
-position = Vector2(246, 494)
-
-[node name="GoodFood4" parent="Good Food Nodes" instance=ExtResource("3_uflgu")]
-position = Vector2(286, 494)
-
-[node name="GoodFood5" parent="Good Food Nodes" instance=ExtResource("3_uflgu")]
-position = Vector2(392, 494)
-
-[node name="GoodFood6" parent="Good Food Nodes" instance=ExtResource("3_uflgu")]
-position = Vector2(432, 494)
-
-[node name="GoodFood7" parent="Good Food Nodes" instance=ExtResource("3_uflgu")]
-position = Vector2(475, 494)
-
-[node name="GoodFood8" parent="Good Food Nodes" instance=ExtResource("3_uflgu")]
-position = Vector2(518, 494)
-
-[node name="Neutral Food Nodes" type="Node2D" parent="."]
-
-[node name="NeutralFood" parent="Neutral Food Nodes" instance=ExtResource("6_k5pft")]
-position = Vector2(168, 456)
-
-[node name="NeutralFood2" parent="Neutral Food Nodes" instance=ExtResource("6_k5pft")]
-position = Vector2(206, 456)
-
-[node name="NeutralFood3" parent="Neutral Food Nodes" instance=ExtResource("6_k5pft")]
-position = Vector2(246, 456)
-
-[node name="NeutralFood4" parent="Neutral Food Nodes" instance=ExtResource("6_k5pft")]
-position = Vector2(286, 456)
-
-[node name="NeutralFood5" parent="Neutral Food Nodes" instance=ExtResource("6_k5pft")]
-position = Vector2(392, 456)
-
-[node name="NeutralFood6" parent="Neutral Food Nodes" instance=ExtResource("6_k5pft")]
-position = Vector2(432, 456)
-
-[node name="NeutralFood7" parent="Neutral Food Nodes" instance=ExtResource("6_k5pft")]
-position = Vector2(475, 456)
-
-[node name="NeutralFood8" parent="Neutral Food Nodes" instance=ExtResource("6_k5pft")]
-position = Vector2(518, 456)
-
-[node name="Toxic Food Nodes" type="Node2D" parent="."]
-
-[node name="ToxicFood" parent="Toxic Food Nodes" instance=ExtResource("5_hnd26")]
-position = Vector2(168, 417)
-
-[node name="ToxicFood2" parent="Toxic Food Nodes" instance=ExtResource("5_hnd26")]
-position = Vector2(206, 417)
-
-[node name="ToxicFood3" parent="Toxic Food Nodes" instance=ExtResource("5_hnd26")]
-position = Vector2(246, 417)
-
-[node name="ToxicFood4" parent="Toxic Food Nodes" instance=ExtResource("5_hnd26")]
-position = Vector2(286, 417)
-
-[node name="ToxicFood5" parent="Toxic Food Nodes" instance=ExtResource("5_hnd26")]
-position = Vector2(392, 417)
-
-[node name="ToxicFood6" parent="Toxic Food Nodes" instance=ExtResource("5_hnd26")]
-position = Vector2(432, 417)
-
-[node name="ToxicFood7" parent="Toxic Food Nodes" instance=ExtResource("5_hnd26")]
-position = Vector2(475, 417)
-
-[node name="ToxicFood8" parent="Toxic Food Nodes" instance=ExtResource("5_hnd26")]
-position = Vector2(518, 417)
+[node name="Layer00027" type="Sprite2D" parent="."]
+position = Vector2(600.25, 700)
+scale = Vector2(1.31735, 1)
+texture = ExtResource("6_k5pft")
