@@ -6,23 +6,28 @@ extends CharacterBody2D
 # Exporting for easy testing. Convert back to consts once the movement is locked
 @export var speed: float = 300.0
 @export var jump_velocity: float = -600.0
+@export var health: float = 100.0
+@export var health_decay_amount: float = 1
+@export var health_decay_interval: float = 1
 @export var look_ahead_distance_px: int = 0
-@export var camera_ease_curve: Curve
-var health: float = 100.0
+var camera_ease_curve: Curve = preload("res://Assets/Other/player_camera_ease.tres")
 var direction: float = 0.0
 var jumping: bool = false
 var camera_offset_amount: float = 0.0
 var camera_move_done: bool = false
+var alive: bool = true
 
 
 func _physics_process(delta):
-	apply_gravity(delta)
-	
-	process_input()
-	
-	move_and_slide()
-	
-	look_ahead(delta)
+	if alive:
+		apply_gravity(delta)
+		process_input()
+		move_and_slide()
+		look_ahead(delta)
+		get_hungry(delta)
+	else:
+		# Replace with a call to our Game Over logic
+		visible = false
 
 
 func apply_gravity(delta) -> void:
@@ -80,11 +85,20 @@ func look_ahead(delta) -> void:
 			curve_sample_pos = 0
 
 
+var time_passed: float = 0.0
+func get_hungry(delta) -> void:
+	time_passed += delta
+	if time_passed >= health_decay_interval:
+		add_health(-health_decay_amount)
+		time_passed = 0
+
+
 func add_health(health_increase: float) -> void:
 	prints("Health before:", health)
 	health += health_increase
 	if health > 100:
 		health = 100
-	elif health < 0:
+	elif health <= 0:
 		health = 0
+		alive = false
 	prints("Health after:", health)
