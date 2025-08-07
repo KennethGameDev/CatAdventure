@@ -19,6 +19,7 @@ look_ahead_distance_px = 100
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_23j0x")
 animation = &"idle"
+frame_progress = 0.714005
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11)

@@ -4,12 +4,15 @@ extends CharacterBody2D
 @onready var camera_2d = $Camera2D
 
 # Exporting for easy testing. Convert back to consts once the movement is locked
-@export var speed: float = 300.0
-@export var jump_velocity: float = -600.0
-@export var health: float = 100.0
+@export var max_speed: float = 300.0
+@export var max_jump_velocity: float = -600.0
+@export var max_health: float = 100.0
 @export var health_decay_amount: float = 1
 @export var health_decay_interval: float = 1
 @export var look_ahead_distance_px: int = 0
+var current_health: float = max_health
+var current_speed: float = max_speed
+var current_jump_velocity: float = max_jump_velocity
 var camera_ease_curve: Curve = preload("res://Assets/Other/player_camera_ease.tres")
 var direction: float = 0.0
 var jumping: bool = false
@@ -43,14 +46,14 @@ func apply_gravity(delta) -> void:
 func process_input() -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_velocity
+		velocity.y = current_jump_velocity
 		jumping = true
 		animated_sprite_2d.play("jump")
 	
 	# Get the input direction and handle the movement/deceleration.
 	direction = Input.get_axis("move_left", "move_right")
 	if direction:
-		velocity.x = direction * speed
+		velocity.x = direction * current_speed
 		# Flip the sprite to face the direction of movement
 		if direction > 0:
 			animated_sprite_2d.set_flip_h(false)
@@ -63,7 +66,7 @@ func process_input() -> void:
 		if not jumping:
 			animated_sprite_2d.play("move")
 	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.x = move_toward(velocity.x, 0, current_speed)
 		# Only play this animation when on the floor
 		if not jumping:
 			animated_sprite_2d.play("idle")
@@ -90,15 +93,59 @@ func get_hungry(delta) -> void:
 	time_passed += delta
 	if time_passed >= health_decay_interval:
 		add_health(-health_decay_amount)
+		update_player_speed()
 		time_passed = 0
 
 
 func add_health(health_increase: float) -> void:
-	prints("Health before:", health)
-	health += health_increase
-	if health > 100:
-		health = 100
-	elif health <= 0:
-		health = 0
+	prints("Health before:", current_health)
+	current_health += health_increase
+	if current_health > 100:
+		current_health = 100
+	elif current_health <= 0:
+		current_health = 0
 		alive = false
-	prints("Health after:", health)
+	prints("Health after:", current_health)
+
+
+func update_player_speed() -> void:
+	if current_health > max_health * 0.9:
+		animated_sprite_2d.speed_scale = 1
+		current_speed = max_speed
+		current_jump_velocity = max_jump_velocity
+	elif current_health <= max_health * 0.9 and current_health > max_health * 0.8:
+		animated_sprite_2d.speed_scale = 0.9
+		current_speed = max_speed * 0.9
+		current_jump_velocity = max_jump_velocity * 0.9
+	elif current_health <= max_health * 0.8 and current_health > max_health * 0.7:
+		animated_sprite_2d.speed_scale = 0.85
+		current_speed = max_speed * 0.85
+		current_jump_velocity = max_jump_velocity * 0.85
+	elif current_health <= max_health * 0.7 and current_health > max_health * 0.6:
+		animated_sprite_2d.speed_scale = 0.5
+		current_speed = max_speed * 0.8
+		current_jump_velocity = max_jump_velocity * 0.8
+	elif current_health <= max_health * 0.6 and current_health > max_health * 0.5:
+		animated_sprite_2d.speed_scale = 0.75
+		current_speed = max_speed * 0.75
+		current_jump_velocity = max_jump_velocity * 0.75
+	elif current_health <= max_health * 0.5 and current_health > max_health * 0.4:
+		animated_sprite_2d.speed_scale = 0.7
+		current_speed = max_speed * 0.7
+		current_jump_velocity = max_jump_velocity * 0.7
+	elif current_health <= max_health * 0.4 and current_health > max_health * 0.3:
+		animated_sprite_2d.speed_scale = 0.65
+		current_speed = max_speed * 0.65
+		current_jump_velocity = max_jump_velocity * 0.65
+	elif current_health <= max_health * 0.3 and current_health > max_health * 0.2:
+		animated_sprite_2d.speed_scale = 0.6
+		current_speed = max_speed * 0.6
+		current_jump_velocity = max_jump_velocity * 0.6
+	elif current_health <= max_health * 0.2 and current_health > max_health * 0.1:
+		animated_sprite_2d.speed_scale = 0.55
+		current_speed = max_speed * 0.55
+		current_jump_velocity = max_jump_velocity * 0.55
+	elif current_health <= max_health * 0.1 and current_health > 0.0:
+		animated_sprite_2d.speed_scale = 0.5
+		current_speed = max_speed * 0.5
+		current_jump_velocity = max_jump_velocity * 0.5
