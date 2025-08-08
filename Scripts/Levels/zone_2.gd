@@ -1,4 +1,4 @@
 extends Level
 
 func _ready():
-	level_name = "Zone 2"
+	level_name = "Zone d2"
