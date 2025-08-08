@@ -91,6 +91,8 @@ func _physics_process(delta):
 	#endregion
 
 func _on_body_entered(body: Node2D):
-	if body.name == "Player":
+	if body.get_class() == "CharacterBody2D":
 		player.add_health(-15)
+		player.update_player_speed()
+		player.time_passed = 0
 	queue_free()
