@@ -1,4 +1,4 @@
 class_name Level
-extends Node2D
+extends Node
 
 var level_name: String = ""

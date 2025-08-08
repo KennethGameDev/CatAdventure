@@ -37,9 +37,263 @@ position = Vector2(583.5, -119)
 scale = Vector2(1.26185, 1.8966)
 texture = ExtResource("4_pkakm")
 
-[node name="PlatformTiles" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAABAAAQABAAAAAAABABAAAQABAAAAAAACABAAAQABAAAAAAADABAAAQABAAAAAAAEABAAAQABAAAAAAAFABAAAQABAAAAAAAGABAAAQABAAAAAAAHABAAAQABAAAAAAAIABAAAQABAAAAAAAJABAAAQABAAAAAAAKABAAAQABAAAAAAALABAAAQABAAAAAAAAABEAAQABAAAAAAAAABIAAQABAAAAAAAAABMAAQABAAAAAAAAABQAAQABAAAAAAABABEAAQABAAAAAAABABIAAQABAAAAAAABABMAAQABAAAAAAABABQAAQABAAAAAAACABEAAQABAAAAAAACABIAAQABAAAAAAACABMAAQABAAAAAAACABQAAQABAAAAAAADABEAAQABAAAAAAADABIAAQABAAAAAAADABMAAQABAAAAAAADABQAAQABAAAAAAAEABEAAQABAAAAAAAEABIAAQABAAAAAAAEABMAAQABAAAAAAAEABQAAQABAAAAAAAFABEAAQABAAAAAAAFABIAAQABAAAAAAAFABMAAQABAAAAAAAFABQAAQABAAAAAAAGABEAAQABAAAAAAAGABIAAQABAAAAAAAGABMAAQABAAAAAAAGABQAAQABAAAAAAAHABEAAQABAAAAAAAHABIAAQABAAAAAAAHABMAAQABAAAAAAAHABQAAQABAAAAAAAIABEAAQABAAAAAAAIABIAAQABAAAAAAAIABMAAQABAAAAAAAIABQAAQABAAAAAAAJABEAAQABAAAAAAAJABIAAQABAAAAAAAJABMAAQABAAAAAAAJABQAAQABAAAAAAAKABEAAQABAAAAAAAKABIAAQABAAAAAAAKABMAAQABAAAAAAAKABQAAQABAAAAAAALABEAAQABAAAAAAALABIAAQABAAAAAAALABMAAQABAAAAAAALABQAAQABAAAAAAAMABAAAQABAAAAAAAMABEAAQABAAAAAAAMABIAAQABAAAAAAAMABMAAQABAAAAAAAMABQAAQABAAAAAAANABAAAQABAAAAAAANABEAAQABAAAAAAANABIAAQABAAAAAAANABMAAQABAAAAAAANABQAAQABAAAAAAAOABAAAQABAAAAAAAOABEAAQABAAAAAAAOABIAAQABAAAAAAAOABMAAQABAAAAAAAOABQAAQABAAAAAAAPABAAAQABAAAAAAAPABEAAQABAAAAAAAPABIAAQABAAAAAAAPABMAAQABAAAAAAAPABQAAQABAAAAAAAQABAAAQABAAAAAAAQABEAAQABAAAAAAAQABIAAQABAAAAAAAQABMAAQABAAAAAAAQABQAAQABAAAAAAARABAAAQABAAAAAAARABEAAQABAAAAAAARABIAAQABAAAAAAARABMAAQABAAAAAAARABQAAQABAAAAAAASABAAAQABAAAAAAASABEAAQABAAAAAAASABIAAQABAAAAAAASABMAAQABAAAAAAASABQAAQABAAAAAAATABAAAQABAAAAAAATABEAAQABAAAAAAATABIAAQABAAAAAAATABMAAQABAAAAAAATABQAAQABAAAAAAAUABAAAQABAAAAAAAUABEAAQABAAAAAAAUABIAAQABAAAAAAAUABMAAQABAAAAAAAUABQAAQABAAAAAAAVABAAAQABAAAAAAAVABEAAQABAAAAAAAVABIAAQABAAAAAAAVABMAAQABAAAAAAAVABQAAQABAAAAAAAWABAAAQABAAAAAAAWABEAAQABAAAAAAAWABIAAQABAAAAAAAWABMAAQABAAAAAAAWABQAAQABAAAAAAAXABAAAQABAAAAAAAXABEAAQABAAAAAAAXABIAAQABAAAAAAAXABMAAQABAAAAAAAXABQAAQABAAAAAAAYABAAAQABAAAAAAAYABEAAQABAAAAAAAYABIAAQABAAAAAAAYABMAAQABAAAAAAAYABQAAQABAAAAAAAZABAAAQABAAAAAAAZABEAAQABAAAAAAAZABIAAQABAAAAAAAZABMAAQABAAAAAAAZABQAAQABAAAAAAAaABAAAQABAAAAAAAaABEAAQABAAAAAAAaABIAAQABAAAAAAAaABMAAQABAAAAAAAaABQAAQABAAAAAAAbABAAAQABAAAAAAAbABEAAQABAAAAAAAbABIAAQABAAAAAAAbABMAAQABAAAAAAAbABQAAQABAAAAAAAcABAAAQABAAAAAAAcABEAAQABAAAAAAAcABIAAQABAAAAAAAcABMAAQABAAAAAAAcABQAAQABAAAAAAAdABAAAQABAAAAAAAdABEAAQABAAAAAAAdABIAAQABAAAAAAAdABMAAQABAAAAAAAdABQAAQABAAAAAAAeABAAAQABAAAAAAAeABEAAQABAAAAAAAeABIAAQABAAAAAAAeABMAAQABAAAAAAAeABQAAQABAAAAAAAfABAAAQABAAAAAAAfABEAAQABAAAAAAAfABIAAQABAAAAAAAfABMAAQABAAAAAAAfABQAAQABAAAAAAAgABAAAQABAAAAAAAgABEAAQABAAAAAAAgABIAAQABAAAAAAAgABMAAQABAAAAAAAgABQAAQABAAAAAAAhABAAAQABAAAAAAAhABEAAQABAAAAAAAhABIAAQABAAAAAAAhABMAAQABAAAAAAAhABQAAQABAAAAAAAiABAAAQABAAAAAAAiABEAAQABAAAAAAAiABIAAQABAAAAAAAiABMAAQABAAAAAAAiABQAAQABAAAAAAAjABAAAQABAAAAAAAjABEAAQABAAAAAAAjABIAAQABAAAAAAAjABMAAQABAAAAAAAjABQAAQABAAAAAAAkABAAAQABAAAAAAAkABEAAQABAAAAAAAkABIAAQABAAAAAAAkABMAAQABAAAAAAAkABQAAQABAAAAAAD//xAAAQABAAAAAAD//xEAAQABAAAAAAD//xIAAQABAAAAAAD//xMAAQABAAAAAAD//xQAAQABAAAAAAAaAAcAAQABAAAAAAAaAAgAAQABAAAAAAAbAAcAAQABAAAAAAAbAAgAAQABAAAAAAAcAAcAAQABAAAAAAAcAAgAAQABAAAAAAAdAAcAAQABAAAAAAAdAAgAAQABAAAAAAAeAAcAAQABAAAAAAAeAAgAAQABAAAAAAAfAAcAAQABAAAAAAAfAAgAAQABAAAAAAAgAAcAAQABAAAAAAAgAAgAAQABAAAAAAAhAAcAAQABAAAAAAAhAAgAAQABAAAAAAAiAAcAAQABAAAAAAAiAAgAAQABAAAAAAAjAAcAAQABAAAAAAAjAAgAAQABAAAAAAAkAAcAAQABAAAAAAAkAAgAAQABAAAAAAAaAAkAAQABAAAAAAAbAAkAAQABAAAAAAAcAAkAAQABAAAAAAAdAAkAAQABAAAAAAAiAAkAAQABAAAAAAAjAAkAAQABAAAAAAAkAAkAAQABAAAAAAAhAAkAAQABAAAAAAAgAAkAAQABAAAAAAAfAAkAAQABAAAAAAAeAAkAAQABAAAAAAA=")
-tile_set = ExtResource("2_7snvs")
+[node name="Background0" type="Sprite2D" parent="Background8"]
+position = Vector2(11207.6, 119.75)
+scale = Vector2(5.71945, 5.75833)
+texture = ExtResource("2_hnd26")
+
+[node name="Background1" type="Sprite2D" parent="Background8"]
+position = Vector2(12853, 124)
+scale = Vector2(5.71945, 5.75833)
+texture = ExtResource("2_hnd26")
+
+[node name="Background5" type="Sprite2D" parent="Background8"]
+position = Vector2(14501, 127)
+scale = Vector2(5.71945, 5.75833)
+texture = ExtResource("2_hnd26")
+
+[node name="Background6" type="Sprite2D" parent="Background8"]
+position = Vector2(16146, 128)
+scale = Vector2(5.71945, 5.75833)
+texture = ExtResource("2_hnd26")
+
+[node name="Background7" type="Sprite2D" parent="Background8"]
+position = Vector2(17785.2, 128)
+scale = Vector2(5.7, 5.75833)
+texture = ExtResource("2_hnd26")
+
+[node name="Bg3" type="Sprite2D" parent="Background8"]
+position = Vector2(21263, 130)
+scale = Vector2(2.5925, 2.5925)
+texture = ExtResource("3_pkakm")
+
+[node name="Bg2" type="Sprite2D" parent="Background8/Bg3"]
+position = Vector2(-96.5828, 4.43591)
+scale = Vector2(1.02122, 1.02122)
+texture = ExtResource("4_n1u2y")
+
+[node name="Bg4" type="Sprite2D" parent="Background8"]
+position = Vector2(25319, 126)
+scale = Vector2(2.5925, 2.5925)
+texture = ExtResource("3_pkakm")
+
+[node name="Bg5" type="Sprite2D" parent="Background8/Bg4"]
+position = Vector2(-733.269, 5.78591)
+scale = Vector2(1.02122, 1.02122)
+texture = ExtResource("4_n1u2y")
+
+[node name="Bg6" type="Sprite2D" parent="Background8/Bg4"]
+position = Vector2(94.889, 4.243)
+scale = Vector2(1.02122, 1.02122)
+texture = ExtResource("4_n1u2y")
+
+[node name="Bg1" type="Sprite2D" parent="Background8"]
+position = Vector2(21186.2, 137.938)
+scale = Vector2(2.67969, 2.67969)
+texture = ExtResource("5_vmcpb")
+
+[node name="Bg2" type="Sprite2D" parent="Background8/Bg1"]
+position = Vector2(1572.48, 1.15454)
+scale = Vector2(0.992536, 1.00192)
+texture = ExtResource("5_vmcpb")
+
+[node name="Windrise-background2" type="Sprite2D" parent="Background8"]
+position = Vector2(32199, 137)
+scale = Vector2(1.37858, 1.37858)
+texture = ExtResource("8_n1u2y")
+
+[node name="Windrise-background" type="Sprite2D" parent="Background8"]
+position = Vector2(29381.7, 135.125)
+scale = Vector2(1.37467, 1.37467)
+texture = ExtResource("8_n1u2y")
+
+[node name="Windrise-background3" type="Sprite2D" parent="Background8"]
+position = Vector2(35012, 147)
+scale = Vector2(1.37467, 1.37467)
+texture = ExtResource("8_n1u2y")
+
+[node name="Bg5" type="Sprite2D" parent="."]
+position = Vector2(-1217, 1312)
+scale = Vector2(7.15489, 5.58696)
+texture = ExtResource("6_vmcpb")
+
+[node name="Bg6" type="Sprite2D" parent="Bg5"]
+position = Vector2(319.781, -0.17901)
+texture = ExtResource("6_vmcpb")
+
+[node name="Bg7" type="Sprite2D" parent="Bg5"]
+position = Vector2(639.563, -0.17901)
+texture = ExtResource("6_vmcpb")
+
+[node name="Bg8" type="Sprite2D" parent="Bg5"]
+position = Vector2(956.688, 0.357955)
+texture = ExtResource("6_vmcpb")
+
+[node name="Bg9" type="Sprite2D" parent="Bg5"]
+position = Vector2(1171.79, 0.536987)
+texture = ExtResource("6_vmcpb")
+
+[node name="Bg10" type="Sprite2D" parent="Bg5"]
+position = Vector2(1491.29, 1.61087)
+texture = ExtResource("6_vmcpb")
+
+[node name="Bg11" type="Sprite2D" parent="Bg5"]
+position = Vector2(1811.49, 1.61087)
+texture = ExtResource("6_vmcpb")
+
+[node name="Bg12" type="Sprite2D" parent="Bg5"]
+position = Vector2(2128.33, 1.7899)
+texture = ExtResource("6_vmcpb")
+
+[node name="Bg13" type="Sprite2D" parent="Bg5"]
+position = Vector2(2321.07, 2.68484)
+texture = ExtResource("6_vmcpb")
+
+[node name="Bg14" type="Sprite2D" parent="Bg5"]
+position = Vector2(2640.43, 7.33854)
+texture = ExtResource("6_vmcpb")
+
+[node name="Bg15" type="Sprite2D" parent="Bg5"]
+position = Vector2(2960.91, 7.33854)
+texture = ExtResource("6_vmcpb")
+
+[node name="Bg16" type="Sprite2D" parent="Bg5"]
+position = Vector2(3280.13, 7.15955)
+texture = ExtResource("6_vmcpb")
+
+[node name="Bg17" type="Sprite2D" parent="Bg5"]
+position = Vector2(3613.84, 7.15955)
+scale = Vector2(1.094, 1)
+texture = ExtResource("6_vmcpb")
+
+[node name="Bg18" type="Sprite2D" parent="Bg5"]
+position = Vector2(3963.3, 5.36967)
+scale = Vector2(1.094, 1)
+texture = ExtResource("6_vmcpb")
+
+[node name="Bg19" type="Sprite2D" parent="Bg5"]
+position = Vector2(4310.34, 4.11675)
+scale = Vector2(1.094, 1)
+texture = ExtResource("6_vmcpb")
+
+[node name="Bg20" type="Sprite2D" parent="Bg5"]
+position = Vector2(4659.75, 5.72764)
+scale = Vector2(1.094, 1)
+texture = ExtResource("6_vmcpb")
+
+[node name="Bg21" type="Sprite2D" parent="Bg5"]
+position = Vector2(4793.64, 7.33854)
+scale = Vector2(1.094, 1)
+texture = ExtResource("6_vmcpb")
+
+[node name="Bg2" type="Sprite2D" parent="."]
+position = Vector2(-1467.35, 1310.25)
+scale = Vector2(5.57337, 5.57337)
+texture = ExtResource("8_vmcpb")
+
+[node name="Bg3" type="Sprite2D" parent="Bg2"]
+position = Vector2(317.823, -0.224281)
+texture = ExtResource("8_vmcpb")
+
+[node name="Bg4" type="Sprite2D" parent="Bg2"]
+position = Vector2(638.034, 0.650407)
+scale = Vector2(1.01195, 1.01195)
+texture = ExtResource("8_vmcpb")
+
+[node name="Bg5" type="Sprite2D" parent="Bg2"]
+position = Vector2(960.881, 0.852253)
+scale = Vector2(1.00804, 1.00804)
+texture = ExtResource("8_vmcpb")
+
+[node name="Bg6" type="Sprite2D" parent="Bg2"]
+position = Vector2(1282.05, 1.39053)
+scale = Vector2(1.00804, 1.00804)
+texture = ExtResource("8_vmcpb")
+
+[node name="Bg7" type="Sprite2D" parent="Bg2"]
+position = Vector2(1593.35, 2.10823)
+scale = Vector2(1.00804, 1.00804)
+texture = ExtResource("8_vmcpb")
+
+[node name="Bg8" type="Sprite2D" parent="Bg2"]
+position = Vector2(1912.37, 2.10823)
+scale = Vector2(1.00804, 1.00804)
+texture = ExtResource("8_vmcpb")
+
+[node name="Bg9" type="Sprite2D" parent="Bg2"]
+position = Vector2(2234.08, 2.28765)
+scale = Vector2(1.00804, 1.00804)
+texture = ExtResource("8_vmcpb")
+
+[node name="Bg10" type="Sprite2D" parent="Bg2"]
+position = Vector2(2555.61, 2.82592)
+scale = Vector2(1.00804, 1.00804)
+texture = ExtResource("8_vmcpb")
+
+[node name="Bg11" type="Sprite2D" parent="Bg2"]
+position = Vector2(2878.75, 3.90247)
+scale = Vector2(1.00804, 1.00804)
+texture = ExtResource("8_vmcpb")
+
+[node name="Bg12" type="Sprite2D" parent="Bg2"]
+position = Vector2(3201.81, 5.70792)
+scale = Vector2(1.02767, 1.02767)
+texture = ExtResource("8_vmcpb")
+
+[node name="Bg13" type="Sprite2D" parent="Bg2"]
+position = Vector2(3524.05, 5.70793)
+scale = Vector2(1.02767, 1.02767)
+texture = ExtResource("8_vmcpb")
+
+[node name="Bg14" type="Sprite2D" parent="Bg2"]
+position = Vector2(3847.19, 6.42563)
+scale = Vector2(1.03547, 1.03547)
+texture = ExtResource("8_vmcpb")
+
+[node name="Bg15" type="Sprite2D" parent="Bg2"]
+position = Vector2(4159.72, 5.70795)
+scale = Vector2(1.04132, 1.04132)
+texture = ExtResource("8_vmcpb")
+
+[node name="Bg16" type="Sprite2D" parent="Bg2"]
+position = Vector2(4485.55, 7.13774)
+scale = Vector2(1.01603, 1.01603)
+texture = ExtResource("8_vmcpb")
+
+[node name="Bg17" type="Sprite2D" parent="Bg2"]
+position = Vector2(4810.26, 7.13213)
+scale = Vector2(1.01603, 1.01603)
+texture = ExtResource("8_vmcpb")
+
+[node name="Bg18" type="Sprite2D" parent="Bg2"]
+position = Vector2(5133.22, 7.13213)
+scale = Vector2(1.01603, 1.01603)
+texture = ExtResource("8_vmcpb")
+
+[node name="Bg19" type="Sprite2D" parent="Bg2"]
+position = Vector2(5454.93, 5.69674)
+scale = Vector2(1.01603, 1.01603)
+texture = ExtResource("8_vmcpb")
+
+[node name="Bg20" type="Sprite2D" parent="Bg2"]
+position = Vector2(5782.2, 6.77328)
+scale = Vector2(1.01603, 1.01603)
+texture = ExtResource("8_vmcpb")
+
+[node name="Bg21" type="Sprite2D" parent="Bg2"]
+position = Vector2(6106.78, 8.20868)
+scale = Vector2(1.01603, 1.01603)
+texture = ExtResource("8_vmcpb")
+
+[node name="Bg22" type="Sprite2D" parent="Bg2"]
+position = Vector2(6262.7, 7.49098)
+scale = Vector2(1.01603, 1.01603)
+texture = ExtResource("8_vmcpb")
+
+[node name="Layer00027" type="Sprite2D" parent="."]
+position = Vector2(312, 587)
+scale = Vector2(0.672414, 0.474149)
+texture = ExtResource("6_k5pft")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_e6tpv")]
 position = Vector2(337, 385)

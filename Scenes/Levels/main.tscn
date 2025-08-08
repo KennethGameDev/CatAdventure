@@ -2,5 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dviiq1gc7df2m" path="res://Scripts/Levels/main.gd" id="1_s0gyx"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource("1_s0gyx")
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
