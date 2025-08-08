@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cubgwlysbnbef"]
+[gd_scene load_steps=4 format=3 uid="uid://v5w1jx4rai4j"]
 
 [ext_resource type="Script" uid="uid://bgbm5weq071nt" path="res://Scripts/Food/neutral_food.gd" id="1_n74er"]
 [ext_resource type="SpriteFrames" uid="uid://d3cslev76kn0l" path="res://Assets/Spriteframes/SF_neutral_food.tres" id="2_fl5mx"]

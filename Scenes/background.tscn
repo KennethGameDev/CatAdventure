@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgy6cio03i518"]
+
+[ext_resource type="Texture2D" uid="uid://cv85jwwfc2wid" path="res://Assets/background/Background layers/Layer_0011_0.png" id="1_xgxeb"]
+[ext_resource type="Texture2D" uid="uid://qraicmjkp7tg" path="res://Assets/background/Background layers/Layer_0008_3.png" id="2_ltlj5"]
+[ext_resource type="Texture2D" uid="uid://c5qwrkimcfuvp" path="res://Assets/background/Background layers/Layer_0007_Lights.png" id="3_rymcx"]
+[ext_resource type="Texture2D" uid="uid://d3pn3uto4rib3" path="res://Assets/background/Background layers/Layer_0006_4.png" id="4_42s4r"]
+
+[node name="Background" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Layer00110" type="Sprite2D" parent="."]
+position = Vector2(791.744, 120.481)
+rotation = 3.14159
+scale = Vector2(2.3085, 1.31353)
+texture = ExtResource("1_xgxeb")
+
+[node name="Layer00083" type="Sprite2D" parent="."]
+position = Vector2(795.341, -634.5)
+scale = Vector2(2.31833, 3.83765)
+texture = ExtResource("2_ltlj5")
+
+[node name="Layer0007Lights" type="Sprite2D" parent="."]
+position = Vector2(939.5, -650.5)
+scale = Vector2(2.37823, 4.15006)
+texture = ExtResource("3_rymcx")
+
+[node name="Layer00064" type="Sprite2D" parent="."]
+position = Vector2(797.5, -634.5)
+scale = Vector2(2.31358, 3.82976)
+texture = ExtResource("4_42s4r")
