@@ -1,23 +1,24 @@
 [gd_scene load_steps=4 format=3 uid="uid://dis2umgovnxej"]
 
-[ext_resource type="Script" uid="uid://5v3fd2ksoyfm" path="res://Scripts/toxic_food.gd" id="1_i2bxg"]
-[ext_resource type="Texture2D" uid="uid://c12mx8wg5woi0" path="res://icon.svg" id="1_rok7u"]
+[ext_resource type="Script" uid="uid://5v3fd2ksoyfm" path="res://Scripts/Food/toxic_food.gd" id="1_i2bxg"]
+[ext_resource type="SpriteFrames" uid="uid://jx8jxr7e6p7b" path="res://Assets/Spriteframes/SF_toxic_food.tres" id="2_44y85"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f6fgd"]
-size = Vector2(32, 32)
+size = Vector2(25, 28)
 
 [node name="ToxicFood" type="Node2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_i2bxg")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_f6fgd")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.905882, 0.054902, 0.12549, 1)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_rok7u")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_44y85")
+animation = &"avacado"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

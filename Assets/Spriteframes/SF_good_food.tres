@@ -1,0 +1,54 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://bhrw5q0k3tatt"]
+
+[ext_resource type="Texture2D" uid="uid://3fgltld4s46k" path="res://Assets/Food/SPR_foodGood.png" id="1_a2ydb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2rfu"]
+atlas = ExtResource("1_a2ydb")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o518w"]
+atlas = ExtResource("1_a2ydb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttps3"]
+atlas = ExtResource("1_a2ydb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk77e"]
+atlas = ExtResource("1_a2ydb")
+region = Rect2(0, 32, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2rfu")
+}],
+"loop": false,
+"name": &"broccoli",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o518w")
+}],
+"loop": false,
+"name": &"chicken",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttps3")
+}],
+"loop": false,
+"name": &"ham",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk77e")
+}],
+"loop": false,
+"name": &"steak",
+"speed": 1.0
+}]

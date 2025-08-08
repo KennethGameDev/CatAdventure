@@ -109,6 +109,7 @@ func add_health(health_increase: float) -> void:
 
 
 func update_player_speed() -> void:
+	#region: Big if statement
 	if current_health > max_health * 0.9:
 		animated_sprite_2d.speed_scale = 1
 		current_speed = max_speed
@@ -149,3 +150,4 @@ func update_player_speed() -> void:
 		animated_sprite_2d.speed_scale = 0.5
 		current_speed = max_speed * 0.5
 		current_jump_velocity = max_jump_velocity * 0.5
+	#endregion
