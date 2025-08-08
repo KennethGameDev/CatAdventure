@@ -1,0 +1,54 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://d3cslev76kn0l"]
+
+[ext_resource type="Texture2D" uid="uid://bewy6mgjyr627" path="res://Assets/Food/SPR_foodMid.png" id="1_uu7h3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y08xv"]
+atlas = ExtResource("1_uu7h3")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpgp1"]
+atlas = ExtResource("1_uu7h3")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mcgm"]
+atlas = ExtResource("1_uu7h3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cv78"]
+atlas = ExtResource("1_uu7h3")
+region = Rect2(0, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y08xv")
+}],
+"loop": false,
+"name": &"apple",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpgp1")
+}],
+"loop": false,
+"name": &"bread",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mcgm")
+}],
+"loop": false,
+"name": &"cheese",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cv78")
+}],
+"loop": false,
+"name": &"tuna",
+"speed": 1.0
+}]

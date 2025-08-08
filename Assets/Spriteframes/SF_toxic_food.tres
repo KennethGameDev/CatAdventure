@@ -1,0 +1,54 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://jx8jxr7e6p7b"]
+
+[ext_resource type="Texture2D" uid="uid://bn3kf0o3l2lx2" path="res://Assets/Food/SPR_foodBad.png" id="1_vadrd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ci74r"]
+atlas = ExtResource("1_vadrd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awe4v"]
+atlas = ExtResource("1_vadrd")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8c4ay"]
+atlas = ExtResource("1_vadrd")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ci0ui"]
+atlas = ExtResource("1_vadrd")
+region = Rect2(32, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ci74r")
+}],
+"loop": false,
+"name": &"avacado",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awe4v")
+}],
+"loop": false,
+"name": &"grapes",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8c4ay")
+}],
+"loop": false,
+"name": &"milk",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ci0ui")
+}],
+"loop": false,
+"name": &"onion",
+"speed": 1.0
+}]
