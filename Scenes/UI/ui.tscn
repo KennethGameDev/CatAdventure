@@ -1,30 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7vk33hyejvf2"]
+[gd_scene load_steps=3 format=3 uid="uid://b7vk33hyejvf2"]
 
 [ext_resource type="Script" uid="uid://guovkc0f45fn" path="res://Scripts/UI/ui.gd" id="1_de23q"]
-[ext_resource type="Script" uid="uid://bi6ae1g0o7mpu" path="res://Scripts/UI/scene_transition.gd" id="2_c7mb3"]
-[ext_resource type="Script" uid="uid://d4ifofk0jr7fp" path="res://Scripts/UI/start_menu.gd" id="2_fo61o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fo61o"]
 bg_color = Color(0, 0, 0, 1)
 
 [node name="UI" type="Control"]
 z_index = 4096
+custom_minimum_size = Vector2(640, 380)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_de23q")
 
 [node name="StartMenu" type="Control" parent="."]
+custom_minimum_size = Vector2(640, 380)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_fo61o")
 
 [node name="MarginContainer" type="MarginContainer" parent="StartMenu"]
 layout_mode = 1
@@ -33,37 +34,37 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 200
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 60
 
 [node name="Label" type="Label" parent="StartMenu/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 111
+theme_override_font_sizes/font_size = 48
 text = "Cat Adventure"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="StartMenu/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = 25
 alignment = 2
 
 [node name="StartButton" type="Button" parent="StartMenu/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(370, 90)
+custom_minimum_size = Vector2(180, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 24
 text = "Start Game"
 
 [node name="QuitButton" type="Button" parent="StartMenu/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(370, 90)
+custom_minimum_size = Vector2(180, 60)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 48
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 24
 text = "Quit Game"
 
 [node name="PauseMenu" type="Control" parent="."]
@@ -103,14 +104,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SceneTransition" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_c7mb3")
 
 [node name="Panel" type="Panel" parent="SceneTransition"]
 layout_mode = 1
@@ -121,5 +120,5 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fo61o")
 
-[connection signal="button_up" from="StartMenu/MarginContainer/VBoxContainer/StartButton" to="StartMenu" method="_on_start_button_button_up"]
-[connection signal="button_up" from="StartMenu/MarginContainer/VBoxContainer/QuitButton" to="StartMenu" method="_on_quit_button_button_up"]
+[connection signal="button_up" from="StartMenu/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_button_up"]
+[connection signal="button_up" from="StartMenu/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_button_up"]

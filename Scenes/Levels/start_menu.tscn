@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c68va1uovsuwk"]
 
-[ext_resource type="Script" uid="uid://d27oiehxn6xl6" path="res://Scripts/Levels/level.gd" id="1_juhg0"]
+[ext_resource type="Script" uid="uid://ch2wyvflg64q0" path="res://Scripts/Levels/start_menu.gd" id="1_h0lgh"]
 
-[node name="StartMenu" type="Node2D"]
-script = ExtResource("1_juhg0")
+[node name="StartMenu" type="Node2D" groups=["Level"]]
+script = ExtResource("1_h0lgh")
