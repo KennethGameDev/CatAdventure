@@ -1,12 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://hwmwdbi4dbfq"]
 
-[ext_resource type="Script" uid="uid://w7yss1138mbp" path="res://Scripts/good_food.gd" id="1_53oft"]
-[ext_resource type="Texture2D" uid="uid://c12mx8wg5woi0" path="res://icon.svg" id="1_rcxvu"]
+[ext_resource type="Script" uid="uid://w7yss1138mbp" path="res://Scripts/Food/good_food.gd" id="1_53oft"]
+[ext_resource type="SpriteFrames" uid="uid://bhrw5q0k3tatt" path="res://Assets/Spriteframes/SF_good_food.tres" id="2_4vq5x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcxvu"]
-size = Vector2(32, 32)
+size = Vector2(28, 29)
 
 [node name="GoodFood" type="Node2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_53oft")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -14,11 +15,11 @@ collision_layer = 8
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_rcxvu")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(4.42803e-06, 0.716251, 0.482137, 1)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_rcxvu")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_4vq5x")
+animation = &"chicken"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

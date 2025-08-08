@@ -1,23 +1,24 @@
 [gd_scene load_steps=4 format=3 uid="uid://cubgwlysbnbef"]
 
-[ext_resource type="Texture2D" uid="uid://c12mx8wg5woi0" path="res://icon.svg" id="1_f6fgd"]
-[ext_resource type="Script" uid="uid://bgbm5weq071nt" path="res://Scripts/neutral_food.gd" id="1_n74er"]
+[ext_resource type="Script" uid="uid://bgbm5weq071nt" path="res://Scripts/Food/neutral_food.gd" id="1_n74er"]
+[ext_resource type="SpriteFrames" uid="uid://d3cslev76kn0l" path="res://Assets/Spriteframes/SF_neutral_food.tres" id="2_fl5mx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f6fgd"]
-size = Vector2(32, 32)
+size = Vector2(28, 27)
 
 [node name="NeutralFood" type="Node2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_n74er")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_f6fgd")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.840101, 0.715271, 0.483784, 1)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_f6fgd")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_fl5mx")
+animation = &"tuna"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

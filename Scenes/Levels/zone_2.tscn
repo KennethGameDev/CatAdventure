@@ -1,15 +1,19 @@
-[gd_scene load_steps=8 format=4 uid="uid://bp4meg1diywr3"]
+[gd_scene load_steps=12 format=4 uid="uid://ctsrro52f4mkm"]
 
-[ext_resource type="PackedScene" uid="uid://dwkinc7jnkgt0" path="res://Scenes/cat.tscn" id="1_e6tpv"]
-[ext_resource type="Texture2D" uid="uid://cv85jwwfc2wid" path="res://Assets/background/Background layers/Layer_0011_0.png" id="1_hnd26"]
-[ext_resource type="TileSet" uid="uid://c0vfqr0ub8fq3" path="res://Assets/Tilesets/platform_tiles.tres" id="2_7snvs"]
+[ext_resource type="Script" uid="uid://bjthum2uxbwvy" path="res://Scripts/Levels/zone_2.gd" id="1_55thy"]
+[ext_resource type="Texture2D" uid="uid://cv85jwwfc2wid" path="res://Assets/background/Background layers/Layer_0011_0.png" id="2_ei5ut"]
+[ext_resource type="Texture2D" uid="uid://qraicmjkp7tg" path="res://Assets/background/Background layers/Layer_0008_3.png" id="3_y1v0w"]
+[ext_resource type="Texture2D" uid="uid://c5qwrkimcfuvp" path="res://Assets/background/Background layers/Layer_0007_Lights.png" id="4_b8362"]
+[ext_resource type="Texture2D" uid="uid://d3pn3uto4rib3" path="res://Assets/background/Background layers/Layer_0006_4.png" id="5_8arkr"]
+[ext_resource type="TileSet" uid="uid://c0vfqr0ub8fq3" path="res://Assets/Tilesets/platform_tiles.tres" id="6_ehsnb"]
+[ext_resource type="PackedScene" uid="uid://dwkinc7jnkgt0" path="res://Scenes/Player/cat.tscn" id="7_tut1b"]
+[ext_resource type="Texture2D" uid="uid://dwc1qujsuanoj" path="res://Assets/background/Background layers/Layer_0002_7.png" id="8_08eho"]
+[ext_resource type="PackedScene" uid="uid://hwmwdbi4dbfq" path="res://Scenes/Food/good_food.tscn" id="9_ei5ut"]
+[ext_resource type="PackedScene" uid="uid://cubgwlysbnbef" path="res://Scenes/Food/neutral_food.tscn" id="10_b8362"]
+[ext_resource type="PackedScene" uid="uid://dis2umgovnxej" path="res://Scenes/Food/toxic_food.tscn" id="11_8arkr"]
 
-[ext_resource type="Texture2D" uid="uid://qraicmjkp7tg" path="res://Assets/background/Background layers/Layer_0008_3.png" id="2_k5pft"]
-[ext_resource type="Texture2D" uid="uid://c5qwrkimcfuvp" path="res://Assets/background/Background layers/Layer_0007_Lights.png" id="3_lmly4"]
-[ext_resource type="Texture2D" uid="uid://d3pn3uto4rib3" path="res://Assets/background/Background layers/Layer_0006_4.png" id="4_pkakm"]
-[ext_resource type="Texture2D" uid="uid://dwc1qujsuanoj" path="res://Assets/background/Background layers/Layer_0002_7.png" id="6_k5pft"]
-
-[node name="Zone1" type="Node2D"]
+[node name="Zone2" type="Node2D"]
+script = ExtResource("1_55thy")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1152.0
@@ -19,32 +23,52 @@ offset_bottom = 648.0
 position = Vector2(581.08, 323.982)
 rotation = 3.14159
 scale = Vector2(1.25366, 0.819297)
-texture = ExtResource("1_hnd26")
+texture = ExtResource("2_ei5ut")
 
 [node name="Layer00083" type="Sprite2D" parent="."]
 position = Vector2(575.25, -116.5)
 scale = Vector2(1.24084, 1.89533)
-texture = ExtResource("2_k5pft")
+texture = ExtResource("3_y1v0w")
 
 [node name="Layer0007Lights" type="Sprite2D" parent="."]
 position = Vector2(666.5, -185.5)
 scale = Vector2(1.42996, 2.98991)
-texture = ExtResource("3_lmly4")
+texture = ExtResource("4_b8362")
 
 [node name="Layer00064" type="Sprite2D" parent="."]
 position = Vector2(583.5, -119)
 scale = Vector2(1.26185, 1.8966)
-texture = ExtResource("4_pkakm")
+texture = ExtResource("5_8arkr")
 
 [node name="PlatformTiles" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAABAAAQABAAAAAAABABAAAQABAAAAAAACABAAAQABAAAAAAADABAAAQABAAAAAAAEABAAAQABAAAAAAAFABAAAQABAAAAAAAGABAAAQABAAAAAAAHABAAAQABAAAAAAAIABAAAQABAAAAAAAJABAAAQABAAAAAAAKABAAAQABAAAAAAALABAAAQABAAAAAAAAABEAAQABAAAAAAAAABIAAQABAAAAAAAAABMAAQABAAAAAAAAABQAAQABAAAAAAABABEAAQABAAAAAAABABIAAQABAAAAAAABABMAAQABAAAAAAABABQAAQABAAAAAAACABEAAQABAAAAAAACABIAAQABAAAAAAACABMAAQABAAAAAAACABQAAQABAAAAAAADABEAAQABAAAAAAADABIAAQABAAAAAAADABMAAQABAAAAAAADABQAAQABAAAAAAAEABEAAQABAAAAAAAEABIAAQABAAAAAAAEABMAAQABAAAAAAAEABQAAQABAAAAAAAFABEAAQABAAAAAAAFABIAAQABAAAAAAAFABMAAQABAAAAAAAFABQAAQABAAAAAAAGABEAAQABAAAAAAAGABIAAQABAAAAAAAGABMAAQABAAAAAAAGABQAAQABAAAAAAAHABEAAQABAAAAAAAHABIAAQABAAAAAAAHABMAAQABAAAAAAAHABQAAQABAAAAAAAIABEAAQABAAAAAAAIABIAAQABAAAAAAAIABMAAQABAAAAAAAIABQAAQABAAAAAAAJABEAAQABAAAAAAAJABIAAQABAAAAAAAJABMAAQABAAAAAAAJABQAAQABAAAAAAAKABEAAQABAAAAAAAKABIAAQABAAAAAAAKABMAAQABAAAAAAAKABQAAQABAAAAAAALABEAAQABAAAAAAALABIAAQABAAAAAAALABMAAQABAAAAAAALABQAAQABAAAAAAAMABAAAQABAAAAAAAMABEAAQABAAAAAAAMABIAAQABAAAAAAAMABMAAQABAAAAAAAMABQAAQABAAAAAAANABAAAQABAAAAAAANABEAAQABAAAAAAANABIAAQABAAAAAAANABMAAQABAAAAAAANABQAAQABAAAAAAAOABAAAQABAAAAAAAOABEAAQABAAAAAAAOABIAAQABAAAAAAAOABMAAQABAAAAAAAOABQAAQABAAAAAAAPABAAAQABAAAAAAAPABEAAQABAAAAAAAPABIAAQABAAAAAAAPABMAAQABAAAAAAAPABQAAQABAAAAAAAQABAAAQABAAAAAAAQABEAAQABAAAAAAAQABIAAQABAAAAAAAQABMAAQABAAAAAAAQABQAAQABAAAAAAARABAAAQABAAAAAAARABEAAQABAAAAAAARABIAAQABAAAAAAARABMAAQABAAAAAAARABQAAQABAAAAAAASABAAAQABAAAAAAASABEAAQABAAAAAAASABIAAQABAAAAAAASABMAAQABAAAAAAASABQAAQABAAAAAAATABAAAQABAAAAAAATABEAAQABAAAAAAATABIAAQABAAAAAAATABMAAQABAAAAAAATABQAAQABAAAAAAAUABAAAQABAAAAAAAUABEAAQABAAAAAAAUABIAAQABAAAAAAAUABMAAQABAAAAAAAUABQAAQABAAAAAAAVABAAAQABAAAAAAAVABEAAQABAAAAAAAVABIAAQABAAAAAAAVABMAAQABAAAAAAAVABQAAQABAAAAAAAWABAAAQABAAAAAAAWABEAAQABAAAAAAAWABIAAQABAAAAAAAWABMAAQABAAAAAAAWABQAAQABAAAAAAAXABAAAQABAAAAAAAXABEAAQABAAAAAAAXABIAAQABAAAAAAAXABMAAQABAAAAAAAXABQAAQABAAAAAAAYABAAAQABAAAAAAAYABEAAQABAAAAAAAYABIAAQABAAAAAAAYABMAAQABAAAAAAAYABQAAQABAAAAAAAZABAAAQABAAAAAAAZABEAAQABAAAAAAAZABIAAQABAAAAAAAZABMAAQABAAAAAAAZABQAAQABAAAAAAAaABAAAQABAAAAAAAaABEAAQABAAAAAAAaABIAAQABAAAAAAAaABMAAQABAAAAAAAaABQAAQABAAAAAAAbABAAAQABAAAAAAAbABEAAQABAAAAAAAbABIAAQABAAAAAAAbABMAAQABAAAAAAAbABQAAQABAAAAAAAcABAAAQABAAAAAAAcABEAAQABAAAAAAAcABIAAQABAAAAAAAcABMAAQABAAAAAAAcABQAAQABAAAAAAAdABAAAQABAAAAAAAdABEAAQABAAAAAAAdABIAAQABAAAAAAAdABMAAQABAAAAAAAdABQAAQABAAAAAAAeABAAAQABAAAAAAAeABEAAQABAAAAAAAeABIAAQABAAAAAAAeABMAAQABAAAAAAAeABQAAQABAAAAAAAfABAAAQABAAAAAAAfABEAAQABAAAAAAAfABIAAQABAAAAAAAfABMAAQABAAAAAAAfABQAAQABAAAAAAAgABAAAQABAAAAAAAgABEAAQABAAAAAAAgABIAAQABAAAAAAAgABMAAQABAAAAAAAgABQAAQABAAAAAAAhABAAAQABAAAAAAAhABEAAQABAAAAAAAhABIAAQABAAAAAAAhABMAAQABAAAAAAAhABQAAQABAAAAAAAiABAAAQABAAAAAAAiABEAAQABAAAAAAAiABIAAQABAAAAAAAiABMAAQABAAAAAAAiABQAAQABAAAAAAAjABAAAQABAAAAAAAjABEAAQABAAAAAAAjABIAAQABAAAAAAAjABMAAQABAAAAAAAjABQAAQABAAAAAAAkABAAAQABAAAAAAAkABEAAQABAAAAAAAkABIAAQABAAAAAAAkABMAAQABAAAAAAAkABQAAQABAAAAAAD//xAAAQABAAAAAAD//xEAAQABAAAAAAD//xIAAQABAAAAAAD//xMAAQABAAAAAAD//xQAAQABAAAAAAAaAAcAAQABAAAAAAAaAAgAAQABAAAAAAAbAAcAAQABAAAAAAAbAAgAAQABAAAAAAAcAAcAAQABAAAAAAAcAAgAAQABAAAAAAAdAAcAAQABAAAAAAAdAAgAAQABAAAAAAAeAAcAAQABAAAAAAAeAAgAAQABAAAAAAAfAAcAAQABAAAAAAAfAAgAAQABAAAAAAAgAAcAAQABAAAAAAAgAAgAAQABAAAAAAAhAAcAAQABAAAAAAAhAAgAAQABAAAAAAAiAAcAAQABAAAAAAAiAAgAAQABAAAAAAAjAAcAAQABAAAAAAAjAAgAAQABAAAAAAAkAAcAAQABAAAAAAAkAAgAAQABAAAAAAAaAAkAAQABAAAAAAAbAAkAAQABAAAAAAAcAAkAAQABAAAAAAAdAAkAAQABAAAAAAAiAAkAAQABAAAAAAAjAAkAAQABAAAAAAAkAAkAAQABAAAAAAAhAAkAAQABAAAAAAAgAAkAAQABAAAAAAAfAAkAAQABAAAAAAAeAAkAAQABAAAAAAA=")
-tile_set = ExtResource("2_7snvs")
+tile_set = ExtResource("6_ehsnb")
 
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_e6tpv")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("7_tut1b")]
 position = Vector2(337, 385)
 
 [node name="Layer00027" type="Sprite2D" parent="."]
 position = Vector2(600.25, 700)
 scale = Vector2(1.31735, 1)
-texture = ExtResource("6_k5pft")
+texture = ExtResource("8_08eho")
+
+[node name="GoodFood" parent="." instance=ExtResource("9_ei5ut")]
+position = Vector2(426, 493)
+
+[node name="NeutralFood" parent="." instance=ExtResource("10_b8362")]
+position = Vector2(457, 491)
+
+[node name="ToxicFood" parent="." instance=ExtResource("11_8arkr")]
+position = Vector2(490, 492)
+
+[node name="GoodFood2" parent="." instance=ExtResource("9_ei5ut")]
+position = Vector2(521, 491)
+food_type = "Steak"
+
+[node name="NeutralFood2" parent="." instance=ExtResource("10_b8362")]
+position = Vector2(550, 491)
+food_type = "Cheese"
+
+[node name="ToxicFood2" parent="." instance=ExtResource("11_8arkr")]
+position = Vector2(580, 490)
+food_type = "Milk"

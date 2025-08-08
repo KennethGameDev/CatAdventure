@@ -1,8 +1,10 @@
 extends Node2D
 
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("Player")
+@onready var sprites = $AnimatedSprite2D
 @export var oscilation_height: float = 6.0
 @export var oscilation_speed_mult: float = 5.0
+@export_enum("Chicken", "Ham", "Steak", "Broccoli") var food_type: String = "Chicken"
 var new_oscilation_speed: float = 1.0
 var oscilation_timer: float = 0.0
 var max_height: float = 0.0
@@ -15,6 +17,15 @@ func _ready():
 	oscilation_timer = rng.randf_range(0.0, oscilation_height)
 	if oscilation_timer > 1 and oscilation_timer < oscilation_height - 1:
 		new_oscilation_speed = oscilation_speed_mult
+	match food_type:
+		"Chicken":
+			sprites.animation = "chicken"
+		"Ham":
+			sprites.animation = "ham"
+		"Steak":
+			sprites.animation = "steak"
+		"Broccoli":
+			sprites.animation = "broccoli"
 
 func _physics_process(delta):
 	#region: Floating "animation" code 
@@ -81,5 +92,5 @@ func _physics_process(delta):
 
 func _on_body_entered(body: Node2D):
 	if body.name == "Player":
-		player.add_health(5)
+		player.add_health(20)
 	queue_free()
