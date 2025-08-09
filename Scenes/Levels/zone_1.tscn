@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=4 uid="uid://bp4meg1diywr3"]
+[gd_scene load_steps=15 format=4 uid="uid://bp4meg1diywr3"]
 
-[ext_resource type="PackedScene" uid="uid://dwkinc7jnkgt0" path="res://Scenes/cat.tscn" id="1_e6tpv"]
+[ext_resource type="PackedScene" uid="uid://dwkinc7jnkgt0" path="res://Scenes/Player/cat.tscn" id="1_e6tpv"]
 [ext_resource type="PackedScene" uid="uid://cgy6cio03i518" path="res://Scenes/background.tscn" id="1_k8yrj"]
+[ext_resource type="Script" uid="uid://6yk1jnruykv7" path="res://Scripts/Levels/zone_1.gd" id="1_m1pp0"]
 [ext_resource type="Texture2D" uid="uid://dta4mgy7kdvor" path="res://Assets/background/Background layers/background_0.png" id="2_hnd26"]
 [ext_resource type="Texture2D" uid="uid://rqa7j5vxgfmg" path="res://Assets/Tilesets/oak_woods_tileset.png" id="3_2xp0k"]
 [ext_resource type="Texture2D" uid="uid://bpftt1138ala3" path="res://Assets/background/Background layers/BG_3.png" id="3_pkakm"]
@@ -1357,7 +1358,9 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/1 = SubResource("TileSetAtlasSource_hnd26")
 
 [node name="Zone1" type="Node2D"]
+process_mode = 1
 position = Vector2(-12965, 1702)
+script = ExtResource("1_m1pp0")
 
 [node name="Background8" parent="." instance=ExtResource("1_k8yrj")]
 position = Vector2(-2073, 162)
@@ -1635,7 +1638,6 @@ texture = ExtResource("6_k5pft")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_e6tpv")]
 position = Vector2(36, 309)
-scale = Vector2(1, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-121, -12)

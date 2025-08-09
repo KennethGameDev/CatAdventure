@@ -74,18 +74,18 @@ func process_input() -> void:
 
 var curve_sample_pos: float = 0.0
 func look_ahead(delta) -> void:
-	if not camera_move_done:
-		if curve_sample_pos < 1:
-			curve_sample_pos += delta
-			if curve_sample_pos > 1:
-				curve_sample_pos = 1
-				camera_move_done = true
-			if direction > 0:
-				camera_offset_amount += camera_ease_curve.sample(curve_sample_pos)
-			elif direction < 0:
-				camera_offset_amount -= camera_ease_curve.sample(curve_sample_pos)
-		else:
-			curve_sample_pos = 0
+	#if not camera_move_done:
+	if curve_sample_pos < 1:
+		curve_sample_pos += delta
+		if curve_sample_pos > 1:
+			curve_sample_pos = 1
+			camera_move_done = true
+		if direction > 0:
+			camera_offset_amount += camera_ease_curve.sample(curve_sample_pos)
+		elif direction < 0:
+			camera_offset_amount -= camera_ease_curve.sample(curve_sample_pos)
+	else:
+		curve_sample_pos = 0
 
 
 var time_passed: float = 0.0
