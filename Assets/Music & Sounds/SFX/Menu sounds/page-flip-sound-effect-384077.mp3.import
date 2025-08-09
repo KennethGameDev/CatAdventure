@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dowj0tgj7w4f7"
+path="res://.godot/imported/page-flip-sound-effect-384077.mp3-c1a492ec8aa27cb64292dbf5d9375ae8.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music & Sounds/SFX/Menu sounds/page-flip-sound-effect-384077.mp3"
+dest_files=["res://.godot/imported/page-flip-sound-effect-384077.mp3-c1a492ec8aa27cb64292dbf5d9375ae8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

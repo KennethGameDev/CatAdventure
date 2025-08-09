@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c03gnfplewynu"
+path="res://.godot/imported/water-stream-river-360596.mp3-f6ba1fa8a6d9116890370363b8717d26.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music & Sounds/SFX/SceneSounds/water-stream-river-360596.mp3"
+dest_files=["res://.godot/imported/water-stream-river-360596.mp3-f6ba1fa8a6d9116890370363b8717d26.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
