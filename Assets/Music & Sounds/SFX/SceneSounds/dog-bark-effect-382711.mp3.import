@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cno255qv4yby4"
+path="res://.godot/imported/dog-bark-effect-382711.mp3-67729f0902bff018aa9fd6903460199a.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music & Sounds/SFX/SceneSounds/dog-bark-effect-382711.mp3"
+dest_files=["res://.godot/imported/dog-bark-effect-382711.mp3-67729f0902bff018aa9fd6903460199a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

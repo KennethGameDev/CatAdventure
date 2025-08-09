@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bw8fh281wk267"
+path="res://.godot/imported/flowing-water-345171.mp3-3a720211e9008d4caa5f569383c3dbb1.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music & Sounds/SFX/SceneSounds/flowing-water-345171.mp3"
+dest_files=["res://.godot/imported/flowing-water-345171.mp3-3a720211e9008d4caa5f569383c3dbb1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
