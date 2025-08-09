@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=4 uid="uid://bp4meg1diywr3"]
 
-[ext_resource type="PackedScene" uid="uid://dwkinc7jnkgt0" path="res://Scenes/cat.tscn" id="1_e6tpv"]
+[ext_resource type="PackedScene" uid="uid://dwkinc7jnkgt0" path="res://Scenes/Player/cat.tscn" id="1_e6tpv"]
 [ext_resource type="PackedScene" uid="uid://cgy6cio03i518" path="res://Scenes/background.tscn" id="1_k8yrj"]
 [ext_resource type="Texture2D" uid="uid://dta4mgy7kdvor" path="res://Assets/background/Background layers/background_0.png" id="2_hnd26"]
 [ext_resource type="Texture2D" uid="uid://rqa7j5vxgfmg" path="res://Assets/Tilesets/oak_woods_tileset.png" id="3_2xp0k"]
@@ -1685,7 +1685,6 @@ texture = ExtResource("11_qxdmk")
 
 [node name="Lamp" type="Sprite2D" parent="."]
 position = Vector2(-46, 452)
-scale = Vector2(1, 1)
 texture = ExtResource("11_8kvg6")
 
 [node name="Lamp2" type="Sprite2D" parent="Lamp"]
