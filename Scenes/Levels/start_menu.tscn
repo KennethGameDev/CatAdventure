@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://ch2wyvflg64q0" path="res://Scripts/Levels/start_menu.gd" id="1_h0lgh"]
 
 [node name="StartMenu" type="Node2D" groups=["Level"]]
+process_mode = 3
 script = ExtResource("1_h0lgh")

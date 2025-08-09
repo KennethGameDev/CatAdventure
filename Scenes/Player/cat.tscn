@@ -12,9 +12,8 @@ collision_mask = 30
 platform_floor_layers = 2
 platform_wall_layers = 2
 script = ExtResource("1_6rxiq")
-health_decay_amount = 10.0
-health_decay_interval = 3.0
-look_ahead_distance_px = 100
+health_decay_amount = 0.5
+health_decay_interval = 2.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_23j0x")

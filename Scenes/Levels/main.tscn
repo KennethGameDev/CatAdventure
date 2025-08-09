@@ -3,10 +3,11 @@
 [ext_resource type="Script" uid="uid://dviiq1gc7df2m" path="res://Scripts/Levels/main.gd" id="1_s0gyx"]
 
 [node name="Main" type="Node2D" groups=["Main"]]
+process_mode = 3
 script = ExtResource("1_s0gyx")
 
-[node name="Control" type="Control" parent="."]
-custom_minimum_size = Vector2(1280, 720)
+[node name="UI Container" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
