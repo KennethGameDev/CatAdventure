@@ -29,8 +29,6 @@ window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 
 [global_group]
-
-Level=""
 Main=""
 Player=""
 BGMusic=""
