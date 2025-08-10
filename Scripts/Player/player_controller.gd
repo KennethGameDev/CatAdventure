@@ -1,7 +1,11 @@
 extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var camera_2d = $Camera2D
+@onready var camera_follow_point = $CameraFollowPoint
+@onready var camera_look_down = $CameraFollowPoint/CameraLookDown
+@onready var camera_look_ahead = $CameraFollowPoint/CameraLookAhead
+@onready var camera_look_behind = $CameraFollowPoint/CameraLookBehind
+@onready var main: Node2D = get_tree().get_first_node_in_group("Main")
 
 # Exporting for easy testing. Convert back to consts once the movement is locked
 @export var max_speed: float = 300.0
@@ -19,6 +23,11 @@ var jumping: bool = false
 var camera_offset_amount: float = 0.0
 var camera_move_done: bool = false
 var alive: bool = true
+signal update_health_for_ui
+
+
+func _ready():
+	pass
 
 
 func _physics_process(delta):
@@ -26,7 +35,6 @@ func _physics_process(delta):
 		apply_gravity(delta)
 		process_input()
 		move_and_slide()
-		look_ahead(delta)
 		get_hungry(delta)
 	else:
 		# Replace with a call to our Game Over logic
@@ -43,7 +51,7 @@ func apply_gravity(delta) -> void:
 			animated_sprite_2d.play("idle")
 
 
-func process_input() -> void:
+func process_input() -> void:	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = current_jump_velocity
@@ -72,40 +80,27 @@ func process_input() -> void:
 			animated_sprite_2d.play("idle")
 
 
-var curve_sample_pos: float = 0.0
-func look_ahead(delta) -> void:
-	if not camera_move_done:
-		if curve_sample_pos < 1:
-			curve_sample_pos += delta
-			if curve_sample_pos > 1:
-				curve_sample_pos = 1
-				camera_move_done = true
-			if direction > 0:
-				camera_offset_amount += camera_ease_curve.sample(curve_sample_pos)
-			elif direction < 0:
-				camera_offset_amount -= camera_ease_curve.sample(curve_sample_pos)
-		else:
-			curve_sample_pos = 0
-
-
 var time_passed: float = 0.0
 func get_hungry(delta) -> void:
 	time_passed += delta
 	if time_passed >= health_decay_interval:
-		add_health(-health_decay_amount)
+		change_health_by(-health_decay_amount)
 		update_player_speed()
 		time_passed = 0
 
 
-func add_health(health_increase: float) -> void:
-	prints("Health before:", current_health)
+func change_health_by(health_increase: float) -> void:
+	#prints("Health before:", current_health)
 	current_health += health_increase
 	if current_health > 100:
 		current_health = 100
 	elif current_health <= 0:
 		current_health = 0
 		alive = false
-	prints("Health after:", current_health)
+	main.ui.update_health()
+	if !alive:
+		main.ui.show_game_over_screen()
+	#prints("Health after:", current_health)
 
 
 func update_player_speed() -> void:
