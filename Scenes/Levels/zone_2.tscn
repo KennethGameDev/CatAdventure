@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cy1l6024mkk0t" path="res://Assets/background/Background layers/bg2.png" id="4_0pvbg"]
 [ext_resource type="Texture2D" uid="uid://ri2owanfuhhd" path="res://Assets/Tilesets/tileset.png" id="5_mktv7"]
 [ext_resource type="Texture2D" uid="uid://rqa7j5vxgfmg" path="res://Assets/Tilesets/oak_woods_tileset.png" id="6_fv5oj"]
-[ext_resource type="Script" path="res://Scenes/Levels/bush.gd" id="7_k3hq6"]
+[ext_resource type="Script" uid="uid://dtiamjptumdr1" path="res://Scenes/Levels/bush.gd" id="7_k3hq6"]
 [ext_resource type="PackedScene" uid="uid://7tla1frcur4y" path="res://Scenes/Food/good_food.tscn" id="9_ei5ut"]
 [ext_resource type="PackedScene" uid="uid://v5w1jx4rai4j" path="res://Scenes/Food/neutral_food.tscn" id="10_b8362"]
 [ext_resource type="Texture2D" uid="uid://qpwj1otikwxf" path="res://Assets/Sprites/TX Village Props.png" id="11_3jaee"]
