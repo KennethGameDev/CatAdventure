@@ -7,11 +7,11 @@ extends CharacterBody2D
 # Exporting for easy testing. Convert back to consts once the movement is locked
 @export var max_speed: float = 300.0
 @export var max_jump_velocity: float = -600.0
-# @export var max_health: float = 100.0
-# @export var health_decay_amount: float = 1
-# @export var health_decay_interval: float = 1
+@export var max_health: float = 100.0
+@export var health_decay_amount: float = 1
+@export var health_decay_interval: float = 1
 @export var look_ahead_distance_px: int = 0
-# var current_health: float = max_health
+var current_health: float = max_health
 var current_speed: float = max_speed
 var current_jump_velocity: float = max_jump_velocity
 var camera_ease_curve: Curve = preload("res://Assets/Other/player_camera_ease.tres")
@@ -100,46 +100,46 @@ func change_health_by(health_increase: float) -> void:
 	#prints("Health after:", current_health)
 
 
-# func update_player_speed() -> void:
-# 	#region: Big if statement
-# 	if current_health > max_health * 0.9:
-# 		animated_sprite_2d.speed_scale = 1
-# 		current_speed = max_speed
-# 		current_jump_velocity = max_jump_velocity
-# 	elif current_health <= max_health * 0.9 and current_health > max_health * 0.8:
-# 		animated_sprite_2d.speed_scale = 0.9
-# 		current_speed = max_speed * 0.9
-# 		current_jump_velocity = max_jump_velocity * 0.9
-# 	elif current_health <= max_health * 0.8 and current_health > max_health * 0.7:
-# 		animated_sprite_2d.speed_scale = 0.85
-# 		current_speed = max_speed * 0.85
-# 		current_jump_velocity = max_jump_velocity * 0.85
-# 	elif current_health <= max_health * 0.7 and current_health > max_health * 0.6:
-# 		animated_sprite_2d.speed_scale = 0.5
-# 		current_speed = max_speed * 0.8
-# 		current_jump_velocity = max_jump_velocity * 0.8
-# 	elif current_health <= max_health * 0.6 and current_health > max_health * 0.5:
-# 		animated_sprite_2d.speed_scale = 0.75
-# 		current_speed = max_speed * 0.75
-# 		current_jump_velocity = max_jump_velocity * 0.75
-# 	elif current_health <= max_health * 0.5 and current_health > max_health * 0.4:
-# 		animated_sprite_2d.speed_scale = 0.7
-# 		current_speed = max_speed * 0.7
-# 		current_jump_velocity = max_jump_velocity * 0.7
-# 	elif current_health <= max_health * 0.4 and current_health > max_health * 0.3:
-# 		animated_sprite_2d.speed_scale = 0.65
-# 		current_speed = max_speed * 0.65
-# 		current_jump_velocity = max_jump_velocity * 0.65
-# 	elif current_health <= max_health * 0.3 and current_health > max_health * 0.2:
-# 		animated_sprite_2d.speed_scale = 0.6
-# 		current_speed = max_speed * 0.6
-# 		current_jump_velocity = max_jump_velocity * 0.6
-# 	elif current_health <= max_health * 0.2 and current_health > max_health * 0.1:
-# 		animated_sprite_2d.speed_scale = 0.55
-# 		current_speed = max_speed * 0.55
-# 		current_jump_velocity = max_jump_velocity * 0.55
-# 	elif current_health <= max_health * 0.1 and current_health > 0.0:
-# 		animated_sprite_2d.speed_scale = 0.5
-# 		current_speed = max_speed * 0.5
-# 		current_jump_velocity = max_jump_velocity * 0.5
-# 	#endregion
+func update_player_speed() -> void:
+	#region: Big if statement
+	if current_health > max_health * 0.9:
+		animated_sprite_2d.speed_scale = 1
+		current_speed = max_speed
+		current_jump_velocity = max_jump_velocity
+	elif current_health <= max_health * 0.9 and current_health > max_health * 0.8:
+		animated_sprite_2d.speed_scale = 0.9
+		current_speed = max_speed * 0.9
+		current_jump_velocity = max_jump_velocity * 0.9
+	elif current_health <= max_health * 0.8 and current_health > max_health * 0.7:
+		animated_sprite_2d.speed_scale = 0.85
+		current_speed = max_speed * 0.85
+		current_jump_velocity = max_jump_velocity * 0.85
+	elif current_health <= max_health * 0.7 and current_health > max_health * 0.6:
+		animated_sprite_2d.speed_scale = 0.5
+		current_speed = max_speed * 0.8
+		current_jump_velocity = max_jump_velocity * 0.8
+	elif current_health <= max_health * 0.6 and current_health > max_health * 0.5:
+		animated_sprite_2d.speed_scale = 0.75
+		current_speed = max_speed * 0.75
+		current_jump_velocity = max_jump_velocity * 0.75
+	elif current_health <= max_health * 0.5 and current_health > max_health * 0.4:
+		animated_sprite_2d.speed_scale = 0.7
+		current_speed = max_speed * 0.7
+		current_jump_velocity = max_jump_velocity * 0.7
+	elif current_health <= max_health * 0.4 and current_health > max_health * 0.3:
+		animated_sprite_2d.speed_scale = 0.65
+		current_speed = max_speed * 0.65
+		current_jump_velocity = max_jump_velocity * 0.65
+	elif current_health <= max_health * 0.3 and current_health > max_health * 0.2:
+		animated_sprite_2d.speed_scale = 0.6
+		current_speed = max_speed * 0.6
+		current_jump_velocity = max_jump_velocity * 0.6
+	elif current_health <= max_health * 0.2 and current_health > max_health * 0.1:
+		animated_sprite_2d.speed_scale = 0.55
+		current_speed = max_speed * 0.55
+		current_jump_velocity = max_jump_velocity * 0.55
+	elif current_health <= max_health * 0.1 and current_health > 0.0:
+		animated_sprite_2d.speed_scale = 0.5
+		current_speed = max_speed * 0.5
+		current_jump_velocity = max_jump_velocity * 0.5
+	#endregion
