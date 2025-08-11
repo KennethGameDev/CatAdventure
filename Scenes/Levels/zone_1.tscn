@@ -1849,72 +1849,58 @@ texture = SubResource("AtlasTexture_qxp01")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(360.717, 45.2055)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_qxp01")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(777.841, 73.1507)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_qxp01")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(514.769, 111.37)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_qxp01")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(969.813, -0.410957)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_qxp01")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(1314.89, 120.411)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_qxp01")
 
 [node name="Sprite2D7" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(1498.33, -14.3836)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_qxp01")
 
 [node name="Sprite2D8" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(2168.1, 6.16438)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_qxp01")
 
 [node name="Sprite2D9" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(2345.37, 71.5068)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_qxp01")
 
 [node name="Sprite2D10" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(2621.72, 136.438)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_qxp01")
 
 [node name="Sprite2D11" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(2872.94, 65.3424)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_qxp01")
 
 [node name="Sprite2D12" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(3596.27, -27.9452)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_qxp01")
 
 [node name="Sprite2D13" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(3391.5, -26.7123)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_qxp01")
 
 [node name="Sprite2D14" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(3464.5, -27.1233)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_qxp01")
 
 [node name="Sprite2D15" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(3535.6, -27.9452)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_qxp01")
 
 [node name="Sprite2D16" type="Sprite2D" parent="Sprite2D"]
@@ -6767,57 +6753,46 @@ texture = SubResource("AtlasTexture_vnvks")
 
 [node name="mushroom2" type="Sprite2D" parent="mushroom"]
 position = Vector2(453.701, 31.1345)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_vnvks")
 
 [node name="mushroom12" type="Sprite2D" parent="mushroom"]
 position = Vector2(115.457, -31.4622)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_vnvks")
 
 [node name="mushroom3" type="Sprite2D" parent="mushroom"]
 position = Vector2(757.409, 37.0336)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_vnvks")
 
 [node name="mushroom4" type="Sprite2D" parent="mushroom"]
 position = Vector2(1349.25, 42.605)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_vnvks")
 
 [node name="mushroom5" type="Sprite2D" parent="mushroom"]
 position = Vector2(1559.17, -9.83197)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_vnvks")
 
 [node name="mushroom6" type="Sprite2D" parent="mushroom"]
 position = Vector2(1811.76, 25.8907)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_vnvks")
 
 [node name="mushroom7" type="Sprite2D" parent="mushroom"]
 position = Vector2(2282.73, -5.89917)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_vnvks")
 
 [node name="mushroom8" type="Sprite2D" parent="mushroom"]
 position = Vector2(2558.67, 82.916)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_vnvks")
 
 [node name="mushroom9" type="Sprite2D" parent="mushroom"]
 position = Vector2(2656.52, -27.2017)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_vnvks")
 
 [node name="mushroom10" type="Sprite2D" parent="mushroom"]
 position = Vector2(2782.81, 62.5966)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_vnvks")
 
 [node name="mushroom11" type="Sprite2D" parent="mushroom"]
 position = Vector2(3016.43, -5.24371)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_vnvks")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

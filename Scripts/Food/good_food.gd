@@ -92,7 +92,7 @@ func _physics_process(delta):
 
 func _on_body_entered(body: Node2D):
 	if body.get_class() == "CharacterBody2D":
-		player.add_health(20)
+		#player.add_health(20)
 		player.update_player_speed()
 		player.time_passed = 0
 	queue_free()
