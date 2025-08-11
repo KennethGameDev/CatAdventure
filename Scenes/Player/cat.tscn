@@ -15,12 +15,6 @@ platform_wall_layers = 2
 script = ExtResource("1_6rxiq")
 health_decay_amount = 0.5
 health_decay_interval = 2.0
->>>>>>> 7a915571cc69233fc0e2d68b8562bc7622288f87
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("2_23j0x")
-animation = &"idle"
-frame_progress = 0.714005
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11)
@@ -28,3 +22,7 @@ shape = SubResource("RectangleShape2D_gbyq6")
 
 [node name="CameraFollowPoint" type="Marker2D" parent="."]
 position = Vector2(0, -50)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_23j0x")
+animation = &"move"
