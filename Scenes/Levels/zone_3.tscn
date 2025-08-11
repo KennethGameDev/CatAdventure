@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://rqa7j5vxgfmg" path="res://Assets/Tilesets/oak_woods_tileset.png" id="7_63e5a"]
 [ext_resource type="Texture2D" uid="uid://ri2owanfuhhd" path="res://Assets/Tilesets/tileset.png" id="8_uc0pa"]
 [ext_resource type="Texture2D" uid="uid://xt28q4a7xioc" path="res://Assets/Tilesets/Flower 1.png" id="9_rv53p"]
-[ext_resource type="Script" path="res://Scenes/Levels/bush.gd" id="10_ww6ny"]
+[ext_resource type="Script" uid="uid://dtiamjptumdr1" path="res://Scenes/Levels/bush.gd" id="10_ww6ny"]
 [ext_resource type="PackedScene" uid="uid://7tla1frcur4y" path="res://Scenes/Food/good_food.tscn" id="11_f7keo"]
 [ext_resource type="PackedScene" uid="uid://v5w1jx4rai4j" path="res://Scenes/Food/neutral_food.tscn" id="12_hnt7t"]
 [ext_resource type="PackedScene" uid="uid://dis2umgovnxej" path="res://Scenes/Food/toxic_food.tscn" id="13_84s1o"]
