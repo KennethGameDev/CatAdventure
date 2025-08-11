@@ -26,13 +26,4 @@ position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_gbyq6")
 
 [node name="CameraFollowPoint" type="Marker2D" parent="."]
-position = Vector2(0, -150)
-
-[node name="CameraLookDown" type="Marker2D" parent="CameraFollowPoint"]
-position = Vector2(0, 75)
-
-[node name="CameraLookAhead" type="Marker2D" parent="CameraFollowPoint"]
-position = Vector2(75, 0)
-
-[node name="CameraLookBehind" type="Marker2D" parent="CameraFollowPoint"]
-position = Vector2(-75, 0)
+position = Vector2(0, -50)

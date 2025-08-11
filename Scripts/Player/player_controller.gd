@@ -2,9 +2,6 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var camera_follow_point = $CameraFollowPoint
-@onready var camera_look_down = $CameraFollowPoint/CameraLookDown
-@onready var camera_look_ahead = $CameraFollowPoint/CameraLookAhead
-@onready var camera_look_behind = $CameraFollowPoint/CameraLookBehind
 @onready var main: Node2D = get_tree().get_first_node_in_group("Main")
 
 # Exporting for easy testing. Convert back to consts once the movement is locked
@@ -53,10 +50,13 @@ func apply_gravity(delta) -> void:
 
 func process_input() -> void:	
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor_only():
 		velocity.y = current_jump_velocity
 		jumping = true
 		animated_sprite_2d.play("jump")
+	if Input.is_action_just_released("jump") and !is_on_floor_only():
+		if velocity.y < 0:
+			velocity.y = 0
 	
 	# Get the input direction and handle the movement/deceleration.
 	direction = Input.get_axis("move_left", "move_right")

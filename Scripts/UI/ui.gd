@@ -11,6 +11,8 @@ extends Control
 @onready var scene_transition: Control = $SceneTransition
 @onready var panel: Panel = $SceneTransition/Panel
 @onready var progress_bar = $HUD/MarginContainer/ProgressBar
+@onready var credits = $Credits
+@onready var credits_text = $Credits/Text
 @onready var main: Node2D = get_tree().get_first_node_in_group("Main")
 
 var ftb: bool = false
@@ -138,7 +140,7 @@ func show_victory_screen():
 	#gwfo = true
 
 func _on_start_button_button_up():
-	main.change_level(2)
+	main.change_level(1)
 
 func _on_quit_button_button_up():
 	get_tree().quit()
@@ -174,8 +176,17 @@ func return_to_menu_button_pressed():
 		win_screen.visible = false
 		await main.change_level(0)
 		fade_out_from_black()
+	if credits.visible:
+		credits.visible = false
+		await main.change_level(0)
+		fade_out_from_black()
 	for child in get_children():
 		if child == start_menu or child == scene_transition:
 			child.visible = true
 		elif child.visible == true:
 			child.visible = false
+
+func roll_credits():
+	if !credits.visible:
+		credits.visible = true
+	

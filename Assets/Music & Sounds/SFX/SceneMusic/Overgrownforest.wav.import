@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://hexuf86sn18i"
+uid="uid://cfs4n03esohsx"
 path="res://.godot/imported/Overgrownforest.wav-3352564900d07b14cbf65bb197f7b891.sample"
 
 [deps]
@@ -20,5 +20,5 @@ edit/trim=false
 edit/normalize=false
 edit/loop_mode=0
 edit/loop_begin=0
-edit/loop_end=-1
-compress/mode=2
+edit/loop_end=48
+compress/mode=0
