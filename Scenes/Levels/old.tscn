@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp4meg1diywr3"]
+
+[ext_resource type="PackedScene" uid="uid://dk1pmf5tgguvi" path="res://Scenes/Levels/zone_1.tscn" id="1_8qv6i"]
+[ext_resource type="PackedScene" uid="uid://lpkd1hyx10wk" path="res://Scenes/Levels/zone_3.tscn" id="2_gnt5f"]
+[ext_resource type="AudioStream" uid="uid://cfs4n03esohsx" path="res://Assets/Music & Sounds/SFX/SceneMusic/Overgrownforest.wav" id="33_vnvks"]
+
+[node name="AllZones" type="Node2D"]
+
+[node name="Zone 1" parent="." instance=ExtResource("1_8qv6i")]
+
+[node name="Zone 3" parent="." instance=ExtResource("2_gnt5f")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("33_vnvks")
+autoplay = true

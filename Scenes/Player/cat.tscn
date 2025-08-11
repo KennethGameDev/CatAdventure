@@ -7,12 +7,18 @@
 size = Vector2(60, 42)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+process_mode = 1
 scale = Vector2(0.5, 0.5)
 collision_mask = 30
 platform_floor_layers = 2
 platform_wall_layers = 2
 script = ExtResource("1_6rxiq")
+<<<<<<< HEAD
 look_ahead_distance_px = 100
+=======
+health_decay_amount = 0.5
+health_decay_interval = 2.0
+>>>>>>> 7a915571cc69233fc0e2d68b8562bc7622288f87
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_23j0x")
@@ -23,8 +29,5 @@ frame_progress = 0.714005
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_gbyq6")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(0, -20)
-zoom = Vector2(2, 2)
-limit_smoothed = true
-position_smoothing_enabled = true
+[node name="CameraFollowPoint" type="Marker2D" parent="."]
+position = Vector2(0, -50)

@@ -2,5 +2,25 @@
 
 [ext_resource type="Script" uid="uid://dviiq1gc7df2m" path="res://Scripts/Levels/main.gd" id="1_s0gyx"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" groups=["Main"]]
+process_mode = 3
 script = ExtResource("1_s0gyx")
+camera_lead_speed = 1.5
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="UI Container" type="Control" parent="Camera2D"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2

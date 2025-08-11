@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cfs4n03esohsx"
+path="res://.godot/imported/Overgrownforest.wav-3352564900d07b14cbf65bb197f7b891.sample"
+
+[deps]
+
+source_file="res://Assets/Music & Sounds/SFX/SceneMusic/Overgrownforest.wav"
+dest_files=["res://.godot/imported/Overgrownforest.wav-3352564900d07b14cbf65bb197f7b891.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=48
+compress/mode=0

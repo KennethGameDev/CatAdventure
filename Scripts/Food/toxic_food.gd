@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var player: CharacterBody2D = get_tree().get_first_node_in_group("Player")
+@onready var main: Node2D = get_tree().get_first_node_in_group("Main")
 @onready var sprites = $AnimatedSprite2D
 @export var oscilation_height: float = 6.0
 @export var oscilation_speed_mult: float = 5.0
@@ -92,7 +92,13 @@ func _physics_process(delta):
 
 func _on_body_entered(body: Node2D):
 	if body.get_class() == "CharacterBody2D":
+<<<<<<< HEAD
 		#player.add_health(-15)
 		player.update_player_speed()
 		player.time_passed = 0
+=======
+		main.player.change_health_by(-15)
+		main.player.update_player_speed()
+		main.player.time_passed = 0
+>>>>>>> 7a915571cc69233fc0e2d68b8562bc7622288f87
 	queue_free()
